@@ -1,7 +1,7 @@
 Tic Tac Toe Web 2.0.com/index.thefutureisnow
 ============================================
 
-This is an implemntation of Tic Tac Toe using Javascript, Node and MongoDB. 
+This is an implemntation of Tic Tac Toe using Javascript, Node.js and MongoDB. I'm using Mocha.js for testing.
 
 About
 -----

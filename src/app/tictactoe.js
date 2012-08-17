@@ -31,7 +31,7 @@ TicTacToe.Game = function () {
 			}
 		},
 		newGame: function () {
-			TicTacToe.game.createBoard();
+			return TicTacToe.Game.createBoard();
 		},
 		getBoard: function () {
 			return board;

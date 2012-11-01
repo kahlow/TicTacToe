@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	
 	TicTacToe.Game.newGame();
+
 	
 	var canvas = $("#gameBoard")[0];
     var ctx = canvas.getContext("2d");
@@ -25,35 +26,38 @@ $(document).ready(function() {
 		var x = Math.floor(e.pageX / 100), 
 			y = Math.floor(e.pageY / 100);
 
-		TicTacToe.Game.placeTile(x, y, TicTacToe.square.x);
+		var tile = TicTacToe.Game.whoseTurn();
 
-		draw();
-	};  
+		if (TicTacToe.Game.placeTile(x,y,tile)){
+			if (tile == TicTacToe.square.x) {
+				x *= 100;
+				y *= 100;
 
+				ctx.beginPath();
+				ctx.moveTo(x, y);
+				ctx.lineTo(x + 100, y + 100);
+				ctx.moveTo(x + 100, y);
+				ctx.lineTo(x, y + 100);
+				ctx.stroke();
+			}
+			else{
+				x *= 100;
+				y *= 100;
 
-	function draw() {
-		var board = TicTacToe.Game.getBoard();
-
-		for (var i = 0; i < 3; i++) {
-			for (var j = 0; j < 3; j++){
-				if (board[i][j] != ""){
-					drawX(i, j);
-				}
+				ctx.beginPath();
+				ctx.arc(x+50, y+50, 50, 0, Math.PI*2, true); 
+				ctx.closePath();
+				ctx.stroke();
 			}
 		}
 
-	};
-
-	function drawX(x, y){
-
-		x *= 100;
-		y *= 100;
-
-		ctx.beginPath();
-		ctx.moveTo(x, y);
-		ctx.lineTo(x + 100, y + 100);
-		ctx.moveTo(x + 100, y);
-		ctx.lineTo(x, y + 100);
-		ctx.stroke();
-	};
+		if (TicTacToe.Game.checkWinner() == TicTacToe.square.x) {
+			alert("X Wins!");
+			TicTacToe.Game.newGame();
+		}
+		else if (TicTacToe.Game.checkWinner() == TicTacToe.square.o) {
+			alert("O Wins!");
+			TicTacToe.Game.newGame();
+		}
+	}
 });

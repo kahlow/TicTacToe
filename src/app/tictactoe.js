@@ -25,9 +25,10 @@ TicTacToe.Game = function () {
 		placeTile: function(x, y, tile) {
 			if (board[x][y] == TicTacToe.square.none) {
 				board[x][y] = tile;
+				return true;
 			}
 			else{
-				return "NOPE";
+				return false;
 			}
 		},
 		newGame: function () {
@@ -90,7 +91,7 @@ TicTacToe.Game = function () {
 
 			count = 0;
 
-			for (var i = 3; i > 0; i--){
+			for (var i = 2; i >= 0; i--){
 				if (board[i][i] == TicTacToe.square.x){
 					count++;
 				}
@@ -104,6 +105,34 @@ TicTacToe.Game = function () {
 			}
 			else if (count == -3){
 				return 'O';
+			}
+
+		},
+		whoseTurn: function () {
+			var xCount = 0,
+				oCount = 0;
+
+			for (var i = 0; i < 3; i++){
+				for (var j = 0; j < 3; j++) {
+					switch (board[i][j]){
+						case TicTacToe.square.x:
+							xCount++;
+							break;
+						case TicTacToe.square.o:
+							oCount++;
+							break;
+					}
+				}
+			}
+
+			if (xCount > oCount){
+				return TicTacToe.square.o;
+			}
+			else if (xCount < oCount) {
+				return TicTacToe.square.x;
+			}
+			else {
+				return TicTacToe.square.x;
 			}
 		}
 	};

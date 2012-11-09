@@ -38,9 +38,32 @@ TicTacToe.Game = function () {
 			return board;
 		},
 		checkWinner: function () {
+			// all of this feels ugly but I can't think of a better way to do it
 			var count = 0;
 
+			// side to side
 			for (var i = 0; i < 3; i++){
+				count = 0;
+				for (var j = 0; j < 3; j++){
+					if (board[i][j] == TicTacToe.square.x){
+						count++;
+					}
+					else if (board[i][j] == TicTacToe.square.o){
+						count--;
+					}
+				}
+
+				if (count == 3){
+					return TicTacToe.square.x;
+				}
+				else if (count == -3){
+					return TicTacToe.square.o;
+				}
+			}
+
+			// up down
+			for (var i = 0; i < 3; i++){
+				count = 0;
 				for (var j = 0; j < 3; j++){
 					if (board[j][i] == TicTacToe.square.x){
 						count++;
@@ -50,29 +73,16 @@ TicTacToe.Game = function () {
 					}
 				}
 
-				if (count == 3){
-					return 'X';
-				}
-				else if (count == -3){
-					return 'O';
-				}
-
-				count = 0;
-
-				for (var j = 0; j < 3; j++){
-					if (board[i][j] == TicTacToe.square.x){
-						count++;
+					if (count == 3){
+						return TicTacToe.square.x;
 					}
-					else if (board[i][j] == TicTacToe.square.y){
-						count--;
+					else if (count == -3){
+						return TicTacToe.square.o;
 					}
-				}
-
-				count = 0;
 			}
 
 			count = 0;
-
+			// diaginal to the right
 			for (var i = 0; i < 3; i++){
 				if (board[i][i] == TicTacToe.square.x){
 					count++;
@@ -83,14 +93,15 @@ TicTacToe.Game = function () {
 			}
 
 			if (count == 3){
-				return 'X';
+				return TicTacToe.square.x;
 			}
 			else if (count == -3){
-				return 'O';
+				return TicTacToe.square.o;
 			}
 
 			count = 0;
 
+			// diaginal to the left
 			for (var i = 2; i >= 0; i--){
 				if (board[i][i] == TicTacToe.square.x){
 					count++;
@@ -101,12 +112,11 @@ TicTacToe.Game = function () {
 			}
 
 			if (count == 3){
-				return 'X';
+				return TicTacToe.square.x;
 			}
 			else if (count == -3){
-				return 'O';
+				return TicTacToe.square.o;
 			}
-
 		},
 		whoseTurn: function () {
 			var xCount = 0,

@@ -58,30 +58,55 @@ describe('TicTacToe', function () {
 			Testfile.Game.placeTile(0,1,Testfile.square.x);
 			Testfile.Game.placeTile(0,2,Testfile.square.x);
 			Testfile.Game.placeTile(1,1,Testfile.square.o);
+			assert.equal(Testfile.Game.checkWinner(), Testfile.square.x);
 		});
 	});
 
-	describe('#whoseTurn ()', function () {
-		it('should return x', function () {
+	describe('#checkWinner ()', function () {
+		it('should declare a winner', function() {
 			var board = new Testfile.Game.createBoard();
 			Testfile.Game.placeTile(0,0,Testfile.square.x);
-			Testfile.Game.placeTile(0,1,Testfile.square.x);
-			Testfile.Game.placeTile(0,2,Testfile.square.x);
+			Testfile.Game.placeTile(1,0,Testfile.square.x);
+			Testfile.Game.placeTile(2,0,Testfile.square.x);
 			Testfile.Game.placeTile(1,1,Testfile.square.o);
-			var x = Testfile.Game.whoseTurn();
-			assert.equal(x, Testfile.square.x);
+
+			assert.equal(Testfile.Game.checkWinner(), Testfile.square.x);
+		});
+	});
+
+	describe('#checkWinner ()', function () {
+		it('should declare a winner', function() {
+			var board = new Testfile.Game.createBoard();
+			Testfile.Game.placeTile(0,0,Testfile.square.x);
+			Testfile.Game.placeTile(1,1,Testfile.square.x);
+			Testfile.Game.placeTile(2,2,Testfile.square.x);
+			Testfile.Game.placeTile(1,1,Testfile.square.o);
+
+			assert.equal(Testfile.Game.checkWinner(), Testfile.square.x);
 		});
 	});
 
 	describe('#whoseTurn ()', function () {
 		it('should return o', function () {
 			var board = new Testfile.Game.createBoard();
-			Testfile.Game.placeTile(0,0,Testfile.square.o);
-			Testfile.Game.placeTile(0,1,Testfile.square.o);
+			Testfile.Game.placeTile(0,0,Testfile.square.x);
+			Testfile.Game.placeTile(0,1,Testfile.square.x);
 			Testfile.Game.placeTile(0,2,Testfile.square.x);
 			Testfile.Game.placeTile(1,1,Testfile.square.o);
 			var o = Testfile.Game.whoseTurn();
 			assert.equal(o, Testfile.square.o);
+		});
+	});
+
+	describe('#whoseTurn ()', function () {
+		it('should return x', function () {
+			var board = new Testfile.Game.createBoard();
+			Testfile.Game.placeTile(0,0,Testfile.square.o);
+			Testfile.Game.placeTile(0,1,Testfile.square.o);
+			Testfile.Game.placeTile(0,2,Testfile.square.x);
+			Testfile.Game.placeTile(1,1,Testfile.square.o);
+			var x = Testfile.Game.whoseTurn();
+			assert.equal(x, Testfile.square.x);
 		});
 	});
 

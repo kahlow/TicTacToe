@@ -1,8 +1,19 @@
-var http = require('http');
+var express = require('express');
+var app = express();
 
-http.createServer(function (req, res) {
-	res.writeHead(200, {'Content-Type': 'text/plain'});
-	res.end('Hello World\n');
-}).listen(1337, '127.0.0.1');
+app.get('/', function(req, res){
+    res.sendfile('public/index.html');
+});
 
-console.log('Server running at http://127.0.0.1:1337/');
+app.get('/src/lib/:file', function(req, res) {
+    res.sendfile('src/lib/' + req.params.file);
+});
+
+app.get('/src/app/:file', function(req, res) {
+    res.sendfile('src/app/' + req.params.file);
+});
+
+app.listen(3000);
+console.log('Listening on port 3000');
+
+

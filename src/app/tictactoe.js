@@ -101,20 +101,13 @@ TicTacToe.Game = function () {
 
 			count = 0;
 
-			// diaginal to the left
-			for (var i = 2; i >= 0; i--){
-				if (board[i][i] == TicTacToe.square.x){
-					count++;
-				}
-				else if (board[i][i] == TicTacToe.square.o){
-					count--;
-				}
-			}
+			// diaginal to the left - Don't judge me
 
-			if (count == 3){
+			if (board[0][2] == TicTacToe.square.x && board[1][1] == TicTacToe.square.x && board[2][0] == TicTacToe.square.x) {
 				return TicTacToe.square.x;
-			}
-			else if (count == -3){
+			} 
+
+			if (board[0][2] == TicTacToe.square.o && board[1][1] == TicTacToe.square.o && board[2][0] == TicTacToe.square.o) {
 				return TicTacToe.square.o;
 			}
 		},

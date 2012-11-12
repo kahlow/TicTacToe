@@ -77,6 +77,18 @@ describe('TicTacToe', function () {
 	describe('#checkWinner ()', function () {
 		it('should declare a winner', function() {
 			var board = new Testfile.Game.createBoard();
+			Testfile.Game.placeTile(0,2,Testfile.square.x);
+			Testfile.Game.placeTile(1,1,Testfile.square.x);
+			Testfile.Game.placeTile(2,0,Testfile.square.x);
+			Testfile.Game.placeTile(1,1,Testfile.square.o);
+
+			assert.equal(Testfile.Game.checkWinner(), Testfile.square.x);
+		});
+	});
+
+	describe('#checkWinner ()', function () {
+		it('should declare a winner', function() {
+			var board = new Testfile.Game.createBoard();
 			Testfile.Game.placeTile(0,0,Testfile.square.x);
 			Testfile.Game.placeTile(1,1,Testfile.square.x);
 			Testfile.Game.placeTile(2,2,Testfile.square.x);

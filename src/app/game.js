@@ -1,23 +1,11 @@
 $(document).ready(function() {
 	
 	TicTacToe.Game.newGame();
-
 	
 	var canvas = $("#gameBoard")[0];
     var ctx = canvas.getContext("2d");
 
-    // draw board
-    ctx.beginPath();
-    for (var i = 100; i < 300; i += 100){
-    	ctx.moveTo(i, 0);
-    	ctx.lineTo(i, 300);
-    }
-
-    for (var i = 100; i < 300; i += 100){
-    	ctx.moveTo(0, i);
-    	ctx.lineTo(300, i);
-    }
-    ctx.stroke();
+    draw();
 
     canvas.addEventListener('click', placeTile, false);
 
@@ -61,3 +49,38 @@ $(document).ready(function() {
 		}
 	}
 });
+
+function draw(){
+	var canvas = $("#gameBoard")[0];
+    var ctx = canvas.getContext("2d");
+
+    ctx.beginPath();
+    for (var i = 100; i < 300; i += 100){
+    	ctx.moveTo(i, 0);
+    	ctx.lineTo(i, 300);
+    }
+
+    for (var i = 100; i < 300; i += 100){
+    	ctx.moveTo(0, i);
+    	ctx.lineTo(300, i);
+    }
+    ctx.stroke();
+};
+
+
+function newGame(){
+	TicTacToe.Game.newGame();
+
+	var canvas = $("#gameBoard")[0];
+    var ctx = canvas.getContext("2d");
+
+	// Use the identity matrix while clearing the canvas
+	ctx.setTransform(1, 0, 0, 1, 0, 0);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	// Restore the transform
+	ctx.restore();
+
+	draw();
+
+};

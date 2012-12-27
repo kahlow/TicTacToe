@@ -7,24 +7,30 @@
 		<link href="/src/css/style.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
-		<div id="content" class="container">
-			<div class="title">Tic Tac Toe</div>
-			<div class="control-group" id="board">
-				<div class="controls controls-row">				
-					<canvas id="gameBoard" width="300" height="300"></canvas>
+		<ul class="nav nav-tabs">
+		  	<li class="active"><a href="#single" data-toggle="tab">Single Player</a></li>
+		  	<li><a href="#multi" data-toggle="tab">Multi Player</a></li>
+		</ul>
+		<div class="title">Tic Tac Toe</div>
+		<div class="tab-content">
+			<div class="tab-pane active" id="single">
+				<div class="row">
+					<div class="span4 offset2">
+						<canvas id="gameBoard" width="300" height="300"></canvas>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4 offset2">
+						<button class="btn btn-primary" type="button" id="newGame">New Game</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="span4 offset2">
+						<div class="alert alert-success span3"></div>
+					</div>
 				</div>
 			</div>
-			<div class="control-group">
-				<div class="controls controls-row">
-					<button class="btn btn-primary" type="button" id="newGame">New Game</button>
-					<button class="btn btn-primary" type="button" name="singlePlayer">Single Player</button>
-				</div>
-			</div>
-			<div class="control-group">
-				<div class="controls controls-row">
-					<div class="alert alert-success span3"></div>
-				</div>
-			</div>
+			<div class="tab-pane" id="multi">Coming soon!</div>
 		</div>
 		<script src="/src/lib/jquery-1.8.2.min.js"></script>
 		<script src="/src/lib/bootstrap.min.js"></script>

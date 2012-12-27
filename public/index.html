@@ -3,10 +3,18 @@
 		<script src="/src/lib/jquery-1.8.2.min.js"></script>
 		<script src="/src/app/game.js"></script>
 		<script src="/src/app/tictactoe.js"></script>
+		<link href="/src/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="/src/css/style.css" rel="stylesheet" media="screen">
+		<script src="/src/lib/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<canvas id="gameBoard" width="300" height="300"></canvas>
-		<br/>
-		<button type="button" onClick="newGame();" name="newGame">New Game</button>
+		<div class="container">
+			<h1>Tic Tac Toe</h1>
+			<canvas id="gameBoard" width="300" height="300"></canvas>
+			<br/>
+			<button class="btn btn-primary" type="button" id="newGame">New Game</button>
+			<button class="btn btn-primary" type="button" name="singlePlayer">Single Player</button>
+			<div class="alert alert-success"></div>
+		</div>
 	</body>
 </html>

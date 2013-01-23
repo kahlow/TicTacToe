@@ -7,3 +7,8 @@ About
 -----
 
 My goal is to have a server running where multiple users can join and play Tic Tac Toe with each other.
+
+Run
+-----
+
+To start the node server type <code>node server.js</code> in the console. Then navigate to the outputed port in your browser.

@@ -1,6 +1,8 @@
 $(document).ready(function () {
 	TicTacToe.Game.newGame();
 
+	$('.alert').hide();
+
 	var canvas = $("#gameBoard")[0],
 		ctx = canvas.getContext("2d");
 
@@ -53,7 +55,7 @@ $(document).ready(function () {
 
 		TicTacToe.Game.newGame();
 
-	 	// Use the identity matrix while clearing the canvas
+		// Use the identity matrix while clearing the canvas
 		ctx.setTransform(1, 0, 0, 1, 0, 0);
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -62,8 +64,6 @@ $(document).ready(function () {
 
 		draw();
 	});
-
-	
 });
 
 function draw() {

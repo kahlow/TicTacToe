@@ -14,20 +14,32 @@
 		<div class="title">Tic Tac Toe</div>
 		<div class="tab-content">
 			<div class="tab-pane active" id="single">
-				<div class="row">
-					<div class="span4 offset2">
-						<canvas id="gameBoard" width="300" height="300"></canvas>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span4 offset2">
-						<button class="btn btn-primary" type="button" id="newGame">New Game</button>
-					</div>
-				</div>
-				<div class="row">
-					<div class="span4 offset2">
-						<div class="alert alert-success span3"></div>
-					</div>
+				<div class="container-fluid">
+			  		<div class="row-fluid">
+			    		<div class="span2">
+		    				<form>
+		    					<fieldset>
+				    				<legend>Player Info</legend>
+				    				<input type="text" placeholder="Player Name">
+				    				<button type="submit" class="btn">Submit</button>
+				    			</fieldset>
+			    			</form>
+			    		</div>
+			    		<div class="span10">
+							<form class="form-horizontal">
+  								<div class="control-group">
+    								<legend>Game</legend>
+    								<canvas id="gameBoard" width="300" height="300"></canvas>
+    							</div>
+								<div class="control-group">
+									<button class="btn btn-primary" type="button" id="newGame">New Game</button>
+								</div>
+								<div class="control-group">
+									<div class="alert alert-success span3"></div>
+								</div>
+							</form>
+						</div>
+			    	</div>
 				</div>
 			</div>
 			<div class="tab-pane" id="multi">Coming soon!</div>
@@ -38,3 +50,5 @@
 		<script src="/src/app/tictactoe.js"></script>
 	</body>
 </html>
+
+

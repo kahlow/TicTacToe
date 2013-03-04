@@ -1,5 +1,5 @@
 var assert = require("assert");
-var Testfile = require("../src/app/tictactoe.js");
+var Testfile = require("../src/app/tictactoe");
 
 describe('TicTacToe', function () {
 	describe('#game ()', function () {
@@ -129,8 +129,4 @@ describe('TicTacToe', function () {
 			assert.equal(o, Testfile.square.x);
 		});
 	});
-
-
 });
-
-

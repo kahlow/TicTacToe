@@ -23,7 +23,7 @@ TicTacToe.Game = function () {
 			return board;
 		},
 		placeTile: function(x, y, tile) {
-			if (board[x][y] == TicTacToe.square.none) {
+			if (board[x][y] === TicTacToe.square.none) {
 				board[x][y] = tile;
 				return true;
 			}
@@ -45,18 +45,18 @@ TicTacToe.Game = function () {
 			for (var i = 0; i < 3; i++){
 				count = 0;
 				for (var j = 0; j < 3; j++){
-					if (board[i][j] == TicTacToe.square.x){
+					if (board[i][j] === TicTacToe.square.x){
 						count++;
 					}
-					else if (board[i][j] == TicTacToe.square.o){
+					else if (board[i][j] === TicTacToe.square.o){
 						count--;
 					}
 				}
 
-				if (count == 3){
+				if (count === 3){
 					return TicTacToe.square.x;
 				}
-				else if (count == -3){
+				else if (count === -3){
 					return TicTacToe.square.o;
 				}
 			}
@@ -65,18 +65,18 @@ TicTacToe.Game = function () {
 			for (var i = 0; i < 3; i++){
 				count = 0;
 				for (var j = 0; j < 3; j++){
-					if (board[j][i] == TicTacToe.square.x){
+					if (board[j][i] === TicTacToe.square.x){
 						count++;
 					}
-					else if (board[j][i] == TicTacToe.square.o){
+					else if (board[j][i] === TicTacToe.square.o){
 						count--;
 					}
 				}
 
-					if (count == 3){
+					if (count === 3){
 						return TicTacToe.square.x;
 					}
-					else if (count == -3){
+					else if (count === -3){
 						return TicTacToe.square.o;
 					}
 			}
@@ -84,30 +84,29 @@ TicTacToe.Game = function () {
 			count = 0;
 			// diaginal to the right
 			for (var i = 0; i < 3; i++){
-				if (board[i][i] == TicTacToe.square.x){
+				if (board[i][i] === TicTacToe.square.x){
 					count++;
 				}
-				else if (board[i][i] == TicTacToe.square.o){
+				else if (board[i][i] === TicTacToe.square.o){
 					count--;
 				}
 			}
 
-			if (count == 3){
+			if (count === 3){
 				return TicTacToe.square.x;
 			}
-			else if (count == -3){
+			else if (count === -3){
 				return TicTacToe.square.o;
 			}
 
 			count = 0;
 
 			// diaginal to the left - Don't judge me
-
-			if (board[0][2] == TicTacToe.square.x && board[1][1] == TicTacToe.square.x && board[2][0] == TicTacToe.square.x) {
+			if (board[0][2] === TicTacToe.square.x && board[1][1] === TicTacToe.square.x && board[2][0] === TicTacToe.square.x) {
 				return TicTacToe.square.x;
 			} 
 
-			if (board[0][2] == TicTacToe.square.o && board[1][1] == TicTacToe.square.o && board[2][0] == TicTacToe.square.o) {
+			if (board[0][2] == TicTacToe.square.o && board[1][1] === TicTacToe.square.o && board[2][0] === TicTacToe.square.o) {
 				return TicTacToe.square.o;
 			}
 		},

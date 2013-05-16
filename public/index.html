@@ -7,42 +7,22 @@
 		<link href="/src/css/style.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
-		<ul class="nav nav-tabs">
-		  	<li class="active"><a href="#single" data-toggle="tab">Single Player</a></li>
-		  	<li><a href="#multi" data-toggle="tab">Multi Player</a></li>
-		</ul>
-		<div class="title">Tic Tac Toe</div>
-		<div class="tab-content">
-			<div class="tab-pane active" id="single">
-				<div class="container-fluid">
-			  		<div class="row-fluid">
-			    		<div class="span2">
-		    				<form>
-		    					<fieldset>
-				    				<legend>Player Info</legend>
-				    				<input type="text" placeholder="Player Name">
-				    				<button type="submit" class="btn">Submit</button>
-				    			</fieldset>
-			    			</form>
-			    		</div>
-			    		<div class="span10">
-							<form class="form-horizontal">
-  								<div class="control-group">
-    								<legend>Game</legend>
-    								<canvas id="gameBoard" width="300" height="300"></canvas>
-    							</div>
-								<div class="control-group">
-									<button class="btn btn-primary" type="button" id="newGame">New Game</button>
-								</div>
-								<div class="control-group">
-									<div class="alert alert-success span3"></div>
-								</div>
-							</form>
-						</div>
-			    	</div>
-				</div>
-			</div>
-			<div class="tab-pane" id="multi">Coming soon!</div>
+		<div class="container">
+			<div class="title">Tic Tac Toe</div>
+	  		<div class="row-fluid">
+				<form class="form-horizontal">
+						<div class="control-group">
+						<legend>Game</legend>
+						<canvas id="gameBoard" width="300" height="300"></canvas>
+					</div>
+					<div class="control-group">
+						<button class="btn btn-primary" type="button" id="newGame">New Game</button>
+					</div>
+					<div class="control-group">
+						<div class="alert alert-success span3"></div>
+					</div>
+				</form>
+	    	</div>
 		</div>
 		<script src="/src/lib/jquery-1.8.2.min.js"></script>
 		<script src="/src/lib/bootstrap.min.js"></script>

@@ -64,6 +64,11 @@ $(document).ready(function () {
 
 		draw();
 	});
+
+	$('#userInfo').submit(function () {
+		alert($("#playername").innerText);
+		alert($("#piece").val());
+	});
 });
 
 function draw() {

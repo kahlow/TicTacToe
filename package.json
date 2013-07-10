@@ -1,0 +1,27 @@
+{
+  "name": "TicTacToe",
+  "version": "0.0.0",
+  "description": "Simple tic tac toe game",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kahlow/TicTacToe.git"
+  },
+  "keywords": [
+    "tictactoe",
+    "node",
+    ""
+  ],
+  "author": "kahlow",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/kahlow/TicTacToe/issues"
+  }
+}

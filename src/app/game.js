@@ -8,7 +8,7 @@ $(document).ready(function () {
 
 	draw();
 
-    canvas.addEventListener('click', placeTile, false);
+	canvas.addEventListener('click', placeTile, false);
 
 	function placeTile(e) {
 
@@ -77,14 +77,14 @@ function draw() {
 
 	ctx.beginPath();
 
-    for (var i = 100; i < 300; i += 100) {
-    	ctx.moveTo(i, 0);
-    	ctx.lineTo(i, 300);
-    }
+	for (var i = 100; i < 300; i += 100) {
+		ctx.moveTo(i, 0);
+		ctx.lineTo(i, 300);
+	}
 
-    for (var i = 100; i < 300; i += 100) {
-    	ctx.moveTo(0, i);
-    	ctx.lineTo(300, i);
-    }
-    ctx.stroke();
+	for (var i = 100; i < 300; i += 100) {
+		ctx.moveTo(0, i);
+		ctx.lineTo(300, i);
+	}
+	ctx.stroke();
 }

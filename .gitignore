@@ -6,3 +6,5 @@ test/.DS_Store
 test/lib/.DS_Store
 
 test/lib/.DS_Store
+
+node_modules/

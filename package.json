@@ -23,5 +23,9 @@
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/kahlow/TicTacToe/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "mocha": "~1.12.0"
   }
 }
